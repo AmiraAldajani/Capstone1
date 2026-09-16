@@ -87,7 +87,7 @@ public class MerchantStockController {
         String message= merchantStockService.merchantInventoryValue(merchantID);
         if (message.equals("case1"))
             return ResponseEntity.status(400).body(new ApiResponse("Didn't find a merchant with this ID in the system"));
-        return ResponseEntity.status(200).body(message);
+        return ResponseEntity.status(200).body(new ApiResponse( message));
     }
 
     @PutMapping("returnProduct/{userID}/{merchantID}/{productID}")

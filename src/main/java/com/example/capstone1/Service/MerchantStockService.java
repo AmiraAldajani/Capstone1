@@ -71,23 +71,6 @@ public class MerchantStockService {
         return false;
     }
 
-    /*
-        public String addStocks(String merchantID, String productID, int stockNumber){
-            boolean merchantIDMatches=false, productIDMatches= false;
-            for ( MerchantStock m: merchantStocks) {
-                if (m.getMerchantID().equals(merchantID)){
-                    merchantIDMatches=true;
-                }
-                if (m.getProductID().equals(productID)){
-                    productIDMatches= true;
-                }
-            }
-            if (!merchantIDMatches)
-                return "Merchant ID doesn't match";
-            if (!productIDMatches)
-                return
-        }
-     */
     public String buyProduct(String userID, String merchantID, String productID) {
         User user = null;Product product = null;
         for (User u : UserService.users)
@@ -124,7 +107,7 @@ public class MerchantStockService {
                 continue;
             for (Product p: ProductService.products)
                 if (p.getId().equals(m.getProductID())){
-                    if (p.getCategoryID().equals(categoryID) && !productsAvailable.contains(p))//maybe there is more than 1 merchant selling the same product. hence, check
+                    if (p.getCategoryID().equals(categoryID))
                         productsAvailable.add(p);
                     break;
                 }
