@@ -68,7 +68,6 @@ public class ProductService {
             for (Product p : ProductService.products)
                 if( p.getCategoryID().equals(categoryID)){
                     p.setPrice(p.getPrice()-p.getPrice()*percentage);
-                    break;
                 }
             return "Discount Applied successfully";
         }

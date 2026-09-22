@@ -55,6 +55,6 @@ public class UserController {
             return ResponseEntity.status(400).body(new ApiResponse("ReceiverID not Found..."));
         if(message.equals("case5"))
             return ResponseEntity.status(400).body(new ApiResponse("SenderID not found"));
-        return ResponseEntity.status(200).body(message); //case3
+        return ResponseEntity.status(200).body(new ApiResponse (message)); //case3
     }
 }
